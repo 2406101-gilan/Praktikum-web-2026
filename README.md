@@ -1,5 +1,7 @@
-# Repositori Praktikum Pemrograman Web 2026
-**informasi Mahasiswa:**
-* **Nama:** M.Gilan Algina
-* **Nim:**  2406101
-
+# Repositori Praktikum Pemrograman Web 2026 
+**Informasi Mahasiswa:** 
+* **Nama:** M.Gilan Algina 
+* **NIM:** 2406101
+* **Kelas/Prodi:** Teknik Informatika - ITG 
+* **Kode MK:** IFRWP5151 --- 
+## Catatan Modul 1 - Instalasi & Verifikasi Tools (VS Code, Node.js, Laragon, Git). - Uji coba Laragon MySQL berjalan pada Port 3306. - Konfigurasi identitas Git global. 
