@@ -1,6 +1,6 @@
 # Repositori Praktikum Pemrograman Web 2026 
 **Informasi Mahasiswa:** 
-* **Nama:** M.Gilan Algina 
+* **Nama:** M.Gilan_Algina 
 * **NIM:** 2406101
 * **Kelas/Prodi:** Teknik Informatika - ITG 
 * **Kode MK:** IFRWP5151 --- 
