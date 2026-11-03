@@ -12,6 +12,9 @@
     <div class="todo-app">
         <h2>Daftar Tugas Saya</h2>
 
+        <!-- FITUR 1: Penghitung jumlah tugas -->
+        <p id="taskCounter" class="task-counter" aria-live="polite"></p>
+
         <!-- Form Input Tugas -->
         <form id="todoForm" novalidate>
             <div class="input-section">
@@ -21,10 +24,13 @@ Anda...">
             </div>
             <div class="error-message" id="inputError">Tugas tidak boleh kosong atau
                 kurang dari 3 karakter!</div>
-            <div class="error-message" id="inputError1">Tugas maksimal 5</div>
+            <div class="error-message" id="inputError1">TUGAS MAKSIMUM 5</div>
         </form>
         <!-- Daftar Tugas -->
         <ul class="todo-list" id="todoList"></ul>
+
+        <!-- FITUR 2: Tombol bersihkan tugas selesai -->
+        <button type="button" id="clearCompletedBtn" class="clear-btn">Bersihkan Tugas Selesai</button>
 
     </div>
     <script src="script.js"></script>

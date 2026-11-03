@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Hubungi M. Gilan Algina untuk pertanyaan, penawaran proyek, dan kolaborasi pengembangan web.">
+
+    <title>Hubungi Saya | M. Gilan Algina</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER DAN NAVIGASI -->
+    <header class="site-header">
+        <div class="header-content">
+            <h1>Hubungi Saya</h1>
+
+            <nav aria-label="Navigasi utama">
+                <ul>
+                    <li>
+                        <a href="index.html">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="index.html#proyek">Proyek</a>
+                    </li>
+                    <li>
+                        <a href="resume.html">Resume</a>
+                    </li>
+                    <li>
+                        <a href="kontak.html" aria-current="page">
+                            Hubungi saya
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main class="contact-main">
+
+        <section class="contact-section">
+
+            <div class="contact-heading">
+                <span class="section-label">HUBUNGI SAYA</span>
+
+                <h2>Mari Bekerja Sama!</h2>
+
+                <p>
+                    Punya pertanyaan, ide proyek, atau ingin berkolaborasi?
+                    Silakan isi formulir di bawah ini.
+                    Saya akan senang mendengar dari Anda.
+                </p>
+            </div>
+
+            <!-- FORMULIR KONTAK -->
+            <form class="contact-form">
+
+                <div class="form-group">
+                    <label for="nama_pengirim">
+                        Nama Lengkap
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nama_pengirim"
+                        name="nama_pengirim"
+                        placeholder="Masukkan nama lengkap Anda"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email_pengirim">
+                        Alamat Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email_pengirim"
+                        name="email_pengirim"
+                        placeholder="contoh@email.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="jenis_layanan">
+                        Layanan yang Dibutuhkan
+                    </label>
+
+                    <select
+                        id="jenis_layanan"
+                        name="jenis_layanan"
+                        required
+                    >
+                        <option value="" disabled selected>
+                            -- Pilih Layanan --
+                        </option>
+
+                        <option value="web">
+                            Pembuatan Website
+                        </option>
+
+                        <option value="app">
+                            Pengembangan Aplikasi
+                        </option>
+
+                        <option value="database">
+                            Pengelolaan Database
+                        </option>
+
+                        <option value="kolaborasi">
+                            Kolaborasi Proyek
+                        </option>
+
+                        <option value="other">
+                            Lain-lain
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="pesan">
+                        Pesan
+                    </label>
+
+                    <textarea
+                        id="pesan"
+                        name="pesan"
+                        rows="6"
+                        placeholder="Tuliskan pertanyaan atau detail proyek Anda..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit">
+                        Kirim Pesan →
+                    </button>
+
+                    <button type="reset">
+                        Reset Form
+                    </button>
+                </div>
+
+                <p class="form-note">
+                    Pastikan informasi yang Anda masukkan sudah benar.
+                </p>
+
+            </form>
+        </section>
+
+        <!-- INFORMASI TAMBAHAN -->
+        <aside class="contact-note">
+            <div class="contact-note-icon" aria-hidden="true">
+                💬
+            </div>
+
+            <div>
+                <h2>Terbuka untuk Kolaborasi</h2>
+
+                <p>
+                    Saat ini saya terbuka untuk proyek freelance,
+                    diskusi ide, dan kolaborasi di bidang pengembangan web.
+                </p>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>
+            &copy; 2026 M. Gilan Algina.
+            Dibuat untuk portofolio mahasiswa.
+        </p>
+    </footer>
+
+</body>
+</html>

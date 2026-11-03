@@ -2,7 +2,10 @@
 // Integrasi Logika Data dan Render ke Elemen DOM
 
 // ===== DATA & STATE =====
-let projects = [
+const STORAGE_KEY = "projects";
+
+// Data bawaan, dipakai hanya jika LocalStorage masih kosong
+const defaultProjects = [
     {
         id: 1,
         title: "Sistem Inventaris Keuangan",
@@ -33,6 +36,28 @@ let projects = [
     }
 ];
 
+// ===== LOCALSTORAGE =====
+const loadProjects = () => {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        // null = belum pernah disimpan -> pakai data bawaan
+        return saved === null ? [...defaultProjects] : JSON.parse(saved);
+    } catch (err) {
+        console.warn("Gagal membaca LocalStorage:", err);
+        return [...defaultProjects];
+    }
+};
+
+const saveProjects = () => {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(projects));
+    } catch (err) {
+        console.warn("Gagal menyimpan ke LocalStorage:", err);
+    }
+};
+
+let projects = loadProjects();
+
 // State filter terpadu (kategori + kata kunci pencarian)
 let activeCategory = "Semua";
 let searchKeyword = "";
@@ -62,6 +87,17 @@ const updateStats = (dataList) => {
     document.getElementById("stat-total-projects").textContent = totalProjects;
     document.getElementById("stat-total-budget").textContent = formatRupiah(totalBudget);
     document.getElementById("stat-completed-projects").textContent = completedCount;
+
+    // FITUR 1: Penghitung jumlah tugas (selalu menghitung semua data, bukan hasil filter)
+    const counterEl = document.getElementById("task-counter");
+    if (counterEl) {
+        counterEl.textContent =
+            `Total: ${totalProjects} Tugas | Selesai: ${completedCount} | Belum Selesai: ${totalProjects - completedCount}`;
+    }
+
+    // FITUR 2: tombol nonaktif bila tidak ada tugas selesai
+    const clearBtn = document.getElementById("btn-clear-completed");
+    if (clearBtn) clearBtn.disabled = completedCount === 0;
 };
 
 // ===== RENDER DAFTAR PROYEK =====
@@ -168,6 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Spread operator: membuat array baru (immutable)
         projects = [...projects, newProject];
+        saveProjects();
 
         form.reset();
         refreshView();
@@ -204,9 +241,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 p.id === id ? { ...p, completed: !p.completed } : p
             );
         } else if (action === "delete") {
+            // FITUR 3: konfirmasi sebelum menghapus
+            if (!confirm("Apakah Anda yakin ingin menghapus tugas ini?")) {
+                return; // Cancel: batal hapus, data tidak berubah
+            }
             projects = projects.filter(p => p.id !== id);
         }
 
+        saveProjects();
+        refreshView();
+    });
+
+    // FITUR 2: Bersihkan Tugas Selesai (hanya completed: true yang dihapus)
+    document.getElementById("btn-clear-completed").addEventListener("click", () => {
+        projects = projects.filter(p => !p.completed);
+        saveProjects();
         refreshView();
     });
 });

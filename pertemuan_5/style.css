@@ -77,6 +77,39 @@ button.add-btn:hover {
     margin-top: 14px;
 }
 
+/* FITUR 1: Penghitung tugas */
+.task-counter {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 16px;
+}
+
+/* FITUR 2: Tombol bersihkan tugas selesai */
+.clear-btn {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    background-color: #fee2e2;
+    color: #b91c1c;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.clear-btn:hover:not(:disabled) {
+    background-color: #fecaca;
+}
+
+.clear-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 .todo-item {
     display: flex;
     align-items: center;

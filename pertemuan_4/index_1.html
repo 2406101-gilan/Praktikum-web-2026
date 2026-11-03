@@ -300,6 +300,38 @@
             padding: 20px;
         }
 
+        /* FITUR 1: Penghitung tugas */
+        .task-counter {
+            font-size: 14px;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 14px;
+        }
+
+        /* FITUR 2: Tombol bersihkan tugas selesai */
+        .btn-clear {
+            display: block;
+            width: 100%;
+            margin-top: 16px;
+            padding: 10px;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            background: #fee2e2;
+            color: #b91c1c;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-clear:hover:not(:disabled) {
+            background: #fecaca;
+        }
+
+        .btn-clear:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
         @media (max-width: 500px) {
             .project-side {
                 align-items: flex-start;
@@ -380,8 +412,14 @@
             <button class="btn-filter" data-category="UI/UX Design">UI/UX Design</button>
         </div>
 
+        <!-- FITUR 1: Penghitung jumlah tugas -->
+        <p id="task-counter" class="task-counter" aria-live="polite"></p>
+
         <!-- Kontainer Daftar Proyek -->
         <div id="project-list"></div>
+
+        <!-- FITUR 2: Tombol Bersihkan Tugas Selesai -->
+        <button type="button" id="btn-clear-completed" class="btn-clear">Bersihkan Tugas Selesai</button>
     </div>
     <script src="main.js"></script>
 </body>
